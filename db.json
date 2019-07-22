@@ -3,12 +3,26 @@
     {
       "title": "Casablanca",
       "rating": "4",
-      "id": 1
+      "id": 0,
+      "poster": "img/casa.webp"
     },
     {
       "title": "Star Wars: A New Hope",
       "rating": "5",
-      "id": 2
+      "id": 1,
+      "poster": "img/star.jpg"
+    },
+    {
+      "title": "The Lion King 3: Hakuna Matata",
+      "rating": "5",
+      "id": 2,
+      "poster": "https://m.media-amazon.com/images/M/MV5BYzg2N2Y1ODYtY2QyMi00ZDAyLWE3MTgtNDNjZGZiOTk0NmE0XkEyXkFqcGdeQXVyNzY1NDgwNjQ@._V1_SX300.jpg"
+    },
+    {
+      "title": "The Lion King 2: Simba's Pride",
+      "rating": "6",
+      "id": 3,
+      "poster": "https://m.media-amazon.com/images/M/MV5BY2Y3MTk2MDgtOTc1Yy00ZmFjLThlNTEtMDQ1Y2EzZmRjMzVjXkEyXkFqcGdeQXVyNjk1Njg5NTA@._V1_SX300.jpg"
     }
   ]
 }
