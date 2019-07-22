@@ -15,6 +15,7 @@ body{
 .main{
     display: flex;
     flex-wrap: wrap;
+    width:100%;
 }
 /*.hidden{*/
 /*    display:none;*/
@@ -41,13 +42,17 @@ body{
     max-height: 80vh;
     overflow:auto;
 }
-#li-img{
+.li-img{
     max-width: 80px;
 }
 .li1{
     width:15%;
 }
 .li{
-    width: 25%;
+    width: 28%;
 }
 
+.delete {
+    max-height: 25px;
+    max-width: 25px;
+}

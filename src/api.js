@@ -32,7 +32,7 @@ module.exports = {
             row += `<div class="li1"><img id="li-img" src=${poster} alt="poster"></div>`;
             row += `<p class="li">${title}</p>`;
             row += `<p class="li">${rate}</p>`;
-            row += `<div class="li"><img src="../public/img/x.png" alt="x"></div>`;
+            row += `<div class="li"><img class="delete" src="img/x.png" alt="x"></div>`;
             list.append(row).scrollTop(999999999999999999999);
         // console.log(url);
         const options = {
@@ -67,5 +67,48 @@ module.exports = {
         };
         fetch(url, options)
     },
-
+    deleteMovie: (data,title)=> {
+        data.forEach(function(movie){
+            if(movie.title === title){
+                let url = `/api/movies/${movie.id}`;
+                let movieId = movie.id;
+                const options = {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(movie),
+                };
+                    fetch(url, options);
+                data.forEach(function(movie,i){
+                    if(i >= movieId) {
+                        const url2 = `/api/movies/${i}`;
+                        const movieObj = {
+                            "title": movie.title,
+                            "rating": movie.rate,
+                            "id": (movie.id - 1),
+                            "poster": data[1].poster
+                        };
+                        const options = {
+                            method: 'PUT',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify(movieObj),
+                        };
+                        fetch(url2, options);
+                    }
+            });
+            }
+        });
+    }
+    //     const url = `/api/movies/${counter}`;
+    //     const options = {
+    //         method: 'DELETE',
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //         },
+    //         body: JSON.stringify(movie),
+    //     fetch(url, options)
+    // }
 };
