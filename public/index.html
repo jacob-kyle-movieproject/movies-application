@@ -3,16 +3,16 @@
 <head>
     <meta charset="U8" />
     <title>Movie Application</title>
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 <h1></h1>
-<div class="loading">
-
+<div>
+<!--    <img class="loading" src="block_loader.gif" alt="asd">-->
 </div>
-<div class="main">
+<div class="main hidden">
     <div class="poster">
-        <div class="picture"></div>
+        <div class="picture"><img id="poster-img" src="img/casa.webp" alt="casa"></div>
         <div class="navbar">
             <div class="previous"></div>
             <div class="current"></div>
@@ -20,34 +20,25 @@
         </div>
     </div>
     <div class="information">
-        <div class="descDiv">
-            <form action="" id="editInfo">
-                <label for="get-title" id="get-title-label">Movie:</label>
-                <input type="text" id="get-title">
-                <br>
-                <label for="get-rate" id="get-rate-label">Rate:</label>
-                <input type="text" id="get-rate">
-<!--                <input type="radio" name="rate">-->
-<!--                <input type="radio" name="rate">-->
-<!--                <input type="radio" name="rate">-->
-<!--                <input type="radio" name="rate">-->
-<!--                <input type="radio" name="rate">-->
-                <button type="button" id="search">Search</button>
-                <button type="button" id="update">Update</button>
-            </form>
-        </div>
-        <div class="addDiv">
-            <label for="post-title" id="post-title-label">Movie:</label>
-            <input type="text" id="post-title">
-            <br>
-            <label for="post-rate" id="post-rate-label">Rate:</label>
-            <input type="text" id="post-rate">
-<!--            <input type="radio" name="rate">-->
-<!--            <input type="radio" name="rate">-->
-<!--            <input type="radio" name="rate">-->
-<!--            <input type="radio" name="rate">-->
-<!--            <input type="radio" name="rate">-->
-            <button type="button" id="add">Add</button>
+        <div id="all-movie"></div>
+        <div>
+            <div class="descDiv">
+                <form action="" id="editInfo">
+                    <label for="get-title" id="get-title-label">Movie:</label>
+                    <input type="text" id="get-title">
+                    <label for="get-rate" id="get-rate-label">Rate:</label>
+                    <input type="text" id="get-rate">
+                    <button type="button" id="search">Search</button>
+                    <button type="button" id="update">Update</button>
+                </form>
+            </div>
+            <div class="addDiv">
+                <label for="post-title" id="post-title-label">Movie:</label>
+                <input type="text" id="post-title">
+                <label for="post-rate" id="post-rate-label">Rate:</label>
+                <input type="text" id="post-rate">
+                <button type="button" id="add">Add</button>
+            </div>
         </div>
     </div>
 </div>

@@ -27,6 +27,13 @@ module.exports = {
             "id": (arr.length),
             "poster": poster
         };
+            let list = $("#all-movie");
+            let row = "";
+            row += `<div class="li1"><img id="li-img" src=${poster} alt="poster"></div>`;
+            row += `<p class="li">${title}</p>`;
+            row += `<p class="li">${rate}</p>`;
+            row += `<div class="li"><img src="../public/img/x.png" alt="x"></div>`;
+            list.append(row).scrollTop(999999999999999999999);
         // console.log(url);
         const options = {
             method: 'POST',
@@ -36,7 +43,8 @@ module.exports = {
             body: JSON.stringify(movie),
         };
         fetch(url, options)
-            })
+            });
+
     },
     updateMovie:  (arr,counter)=>{
         // let origin = $("#get-title").val();
@@ -58,5 +66,6 @@ module.exports = {
             body: JSON.stringify(movie),
         };
         fetch(url, options)
-    }
+    },
+
 };
