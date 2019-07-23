@@ -16,10 +16,8 @@ module.exports = {
             fetch( `http://www.omdbapi.com/?s=${origin}&r=json&type=movie&apikey=e66939d3`)
             .then(response => response.json())
             .then(movies =>{
-                console.log(movies);
                 poster = movies.Search[0].Poster;
-                title = movies.Search[0].Title;
-
+                title = movies.Search[0].Title;z
         const url = '/api/movies';
         const movie = {
             "title": title,
