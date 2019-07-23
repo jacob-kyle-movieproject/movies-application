@@ -12,17 +12,17 @@ body{
     transform: translateY(-100%);
     text-align: center;
 }
-.main{
+.main {
     display: flex;
     flex-wrap: wrap;
-    width:100%;
+    width: 100%;
 }
-/*.hidden{*/
-/*    display:none;*/
-/*}*/
 .loading{
     display: block;
     margin: auto;
+}
+.hidden{
+    display:none;
 }
 .poster{
     width: 34%;
@@ -55,4 +55,7 @@ body{
 .delete {
     max-height: 25px;
     max-width: 25px;
+}
+.delete:hover{
+    cursor: pointer;
 }

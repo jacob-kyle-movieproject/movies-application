@@ -1,4 +1,33 @@
 const $ = require("jquery");
+let buildHtml= function(){
+    fetch('/api/movies')
+        .then(response => response.json())
+        .then(data =>{
+            $("#content").removeClass("hidden");
+            $(".loading").addClass("hidden");
+            let list = $("#all-movie");
+            const sort = (data.sort(function(a, b){
+                if(a.title < b.title) { return -1; }
+                if(a.title > b.title) { return 1; }
+                return 0;
+            }));
+            let row = "";
+            for(let movie of sort){
+                row += `<div class="main">`;
+                row += `<div class="li1"><img class='li-img' src=${movie.poster} alt='poster'></div>`;
+                row += `<p class="li">${movie.title}</p>`;
+                row += `<p class="li">${movie.rating}</p>`;
+                row += `<div class="li"><img class="delete" src="img/x.png" alt="x"></div>`;
+                row += `</div>`;
+                list.html(row);
+            }
+            $(".delete").on("click",function(){
+                let deleted = $(this).parent().parent().children().first().next().html();
+                deleteMovie(data,deleted)
+
+            });
+        });
+};
 module.exports = {
     getMovies: () => {
     return fetch('/api/movies')
@@ -16,23 +45,15 @@ module.exports = {
             fetch( `http://www.omdbapi.com/?s=${origin}&r=json&type=movie&apikey=e66939d3`)
             .then(response => response.json())
             .then(movies =>{
+                console.log(movies);
                 poster = movies.Search[0].Poster;
-                title = movies.Search[0].Title;z
+                title = movies.Search[0].Title;
         const url = '/api/movies';
         const movie = {
             "title": title,
             "rating": rate,
-            "id": (arr.length),
             "poster": poster
         };
-            let list = $("#all-movie");
-            let row = "";
-            row += `<div class="li1"><img id="li-img" src=${poster} alt="poster"></div>`;
-            row += `<p class="li">${title}</p>`;
-            row += `<p class="li">${rate}</p>`;
-            row += `<div class="li"><img class="delete" src="img/x.png" alt="x"></div>`;
-            list.append(row).scrollTop(999999999999999999999);
-        // console.log(url);
         const options = {
             method: 'POST',
             headers: {
@@ -40,20 +61,17 @@ module.exports = {
             },
             body: JSON.stringify(movie),
         };
-        fetch(url, options)
+        fetch(url, options);
+        buildHtml()
             });
-
     },
     updateMovie:  (arr,counter)=>{
         // let origin = $("#get-title").val();
         let rate = $('#get-rate').val();
-        console.log(rate);
-        console.log(arr);
         const url = `/api/movies/${counter}`;
         const movie = {
             "title": arr[counter].title,
             "rating": rate,
-            "id": arr[counter].id,
             "poster": arr[counter].poster
         };
         const options = {
@@ -68,8 +86,8 @@ module.exports = {
     deleteMovie: (data,title)=> {
         data.forEach(function(movie){
             if(movie.title === title){
-                let url = `/api/movies/${movie.id}`;
-                let movieId = movie.id;
+                let movieId = data.indexOf(movie);
+                let url = `/api/movies/${movieId}`;
                 const options = {
                     method: 'DELETE',
                     headers: {
@@ -79,22 +97,21 @@ module.exports = {
                 };
                     fetch(url, options);
                 data.forEach(function(movie,i){
-                    if(i >= movieId) {
+                    if(i > movieId) {
                         const url2 = `/api/movies/${i}`;
                         const movieObj = {
                             "title": movie.title,
-                            "rating": movie.rate,
-                            "id": (movie.id - 1),
-                            "poster": data[1].poster
+                            "rating": movie.rating,
+                            "poster": movie.poster
                         };
-                        const options = {
+                        const options2 = {
                             method: 'PUT',
                             headers: {
                                 'Content-Type': 'application/json',
                             },
                             body: JSON.stringify(movieObj),
                         };
-                        fetch(url2, options);
+                        fetch(url2, options2);
                     }
             });
             }

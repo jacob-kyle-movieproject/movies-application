@@ -16,9 +16,16 @@ let buildHtml= function(){
   fetch('/api/movies')
       .then(response => response.json())
       .then(data =>{
+        $("#content").removeClass("hidden");
+        $(".loading").addClass("hidden");
         let list = $("#all-movie");
+        const sort = (data.sort(function(a, b){
+          if(a.title < b.title) { return -1; }
+          if(a.title > b.title) { return 1; }
+          return 0;
+        }));
         let row = "";
-        for(let movie of data){
+        for(let movie of sort){
           row += `<div class="main">`;
           row += `<div class="li1"><img class='li-img' src=${movie.poster} alt='poster'></div>`;
           row += `<p class="li">${movie.title}</p>`;
@@ -29,33 +36,31 @@ let buildHtml= function(){
         }
         $(".delete").on("click",function(){
           let deleted = $(this).parent().parent().children().first().next().html();
-          getMovies().then(data =>{
-              deleteMovie(data,deleted)
-          });
+            deleteMovie(data,deleted);
+          $(this).parent().parent().html("");
         });
       });
 };
 buildHtml();
-getMovies().then((movies) => {
-  console.log('Here are all the movies:');
-  movies.forEach(({title, rating, id}) => {
-    // console.log(`id#${id} - ${title} - rating: ${rating}`);
-  });
-}).catch((error) => {
-  console.log('Oh no! Something went wrong.\nCheck the console for details.');
-  console.log(error);
-});
+
+// getMovies().then((movies) => {
+//   console.log('Here are all the movies:');
+//   movies.forEach(({title, rate, id}) => {
+//   });
+// }).catch((error) => {
+//   console.log('Oh no! Something went wrong.\nCheck the console for details.');
+//   console.log(error);
+// });
 $("#search").on("click",function(){
   let movieTitle = $("#get-title");
   getMovies().then((data)=>{
-      data.forEach(({title, rating,poster, id}) => {
-        if(title.indexOf(movieTitle.val()) > -1) {
-        movieTitle.val(title);
-        $("#get-rate").val(rating);
-        $(".picture").html(`<img id="poster-img" src=${poster} alt="poster">`);
-        // console.log(title);
-        //   console.log(id);
-          count = id;
+      data.forEach((movie) => {
+        if(movie.title.indexOf(movieTitle.val()) > -1) {
+        movieTitle.val(movie.title);
+        $("#get-rate").val(movie.rating);
+        $(".picture").html(`<img id="poster-img" src=${movie.poster} alt="poster">`);
+          count = data.indexOf(movie);
+          console.log(count);
         }
       });
   });
@@ -68,6 +73,6 @@ $("#update").on("click",function(){
 $("#add").on("click",function(){
   let movieArr;
   getMovies().then(data =>{
-    addMovie(data)
+    addMovie(data);
   });
 });
