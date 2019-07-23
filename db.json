@@ -3,12 +3,80 @@
     {
       "title": "Casablanca",
       "rating": "4",
-      "id": 1
+      "id": 0,
+      "poster": "img/casa.webp"
     },
     {
-      "title": "Star Wars: A New Hope",
-      "rating": "5",
+      "title": "Casablanca",
+      "rating": "4",
+      "poster": "img/casa.webp",
       "id": 2
+    },
+    {
+      "title": "Home Alone",
+      "rating": "3",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMzFkM2YwOTQtYzk2Mi00N2VlLWE3NTItN2YwNDg1YmY0ZDNmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+      "id": 4
+    },
+    {
+      "title": "Master and Commander: The Far Side of the World",
+      "rating": "4",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMjA5NjYyMDM5NV5BMl5BanBnXkFtZTYwOTU5MDY2._V1_SX300.jpg",
+      "id": 6
+    },
+    {
+      "title": "Mulan",
+      "rating": "5",
+      "poster": "https://m.media-amazon.com/images/M/MV5BODkxNGQ1NWYtNzg0Ny00Yjg3LThmZTItMjE2YjhmZTQ0ODY5XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+      "id": 7
+    },
+    {
+      "title": "Home Alone",
+      "rating": "3",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMzFkM2YwOTQtYzk2Mi00N2VlLWE3NTItN2YwNDg1YmY0ZDNmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+      "id": 8
+    },
+    {
+      "title": "Lost in Space",
+      "rating": "2",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTkwNzEyNTgyN15BMl5BanBnXkFtZTcwODk4NTU0Mg@@._V1_SX300.jpg",
+      "id": 9
+    },
+    {
+      "title": "Star Trek",
+      "rating": "3",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMjE5NDQ5OTE4Ml5BMl5BanBnXkFtZTcwOTE3NDIzMw@@._V1_SX300.jpg",
+      "id": 10
+    },
+    {
+      "title": "Mulan",
+      "rating": "5",
+      "poster": "https://m.media-amazon.com/images/M/MV5BODkxNGQ1NWYtNzg0Ny00Yjg3LThmZTItMjE2YjhmZTQ0ODY5XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+      "id": 11
+    },
+    {
+      "title": "Spaceballs",
+      "rating": "3",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMjVjOGQ0OTctNDhkZC00ZGNiLWI2ZGEtYjZlMWZjOTlkNDlhXkEyXkFqcGdeQXVyNjg1MjEwOTM@._V1_SX300.jpg",
+      "id": 12
+    },
+    {
+      "title": "Wreck-It Ralph",
+      "rating": "5",
+      "poster": "https://m.media-amazon.com/images/M/MV5BNzMxNTExOTkyMF5BMl5BanBnXkFtZTcwMzEyNDc0OA@@._V1_SX300.jpg",
+      "id": 15
+    },
+    {
+      "title": "Toy Story 2",
+      "rating": "5",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMWM5ZDcxMTYtNTEyNS00MDRkLWI3YTItNThmMGExMWY4NDIwXkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_SX300.jpg",
+      "id": 21
+    },
+    {
+      "title": "Wreck-It Ralph",
+      "rating": "5",
+      "poster": "https://m.media-amazon.com/images/M/MV5BNzMxNTExOTkyMF5BMl5BanBnXkFtZTcwMzEyNDc0OA@@._V1_SX300.jpg",
+      "id": 22
     }
   ]
 }
