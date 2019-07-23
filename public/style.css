@@ -2,8 +2,9 @@
     box-sizing: border-box;
 }
 body{
-    margin: 0;
+    margin: 10px;
     height: 100%;
+    /*background: black;*/
 }
 
 .container {
@@ -11,6 +12,9 @@ body{
     top: 50%;
     transform: translateY(-100%);
     text-align: center;
+}
+#content{
+    height: 90vh;
 }
 .main {
     display: flex;
@@ -25,7 +29,9 @@ body{
     display:none;
 }
 .poster{
-    width: 34%;
+    width: 45%;
+    padding: 10px;
+    height: 80%;
 }
 .picture{
     width:100%;
@@ -34,28 +40,44 @@ body{
     width: 100%;
 }
 .information{
-    width:66%;
+    width: 55%;
+    padding: 25px;
+    border-radius: 15px;
 }
 #all-movie{
     display: flex;
     flex-wrap: wrap;
     max-height: 80vh;
     overflow:auto;
+    margin: 10px;
 }
 .li-img{
     max-width: 80px;
 }
 .li1{
-    width:15%;
+    width: 15%;
 }
 .li{
     width: 28%;
 }
-
+.li2 {
+    width: 50px;
+}
+.lirating{
+    width: 50px;
+}
+.list {
+    align-content: right;
+}
 .delete {
     max-height: 25px;
     max-width: 25px;
 }
 .delete:hover{
     cursor: pointer;
+}
+.movies {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
 }

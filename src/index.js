@@ -26,11 +26,11 @@ let buildHtml= function(){
         }));
         let row = "";
         for(let movie of sort){
-          row += `<div class="main">`;
-          row += `<div class="li1"><img class='li-img' src=${movie.poster} alt='poster'></div>`;
-          row += `<p class="li">${movie.title}</p>`;
-          row += `<p class="li">${movie.rating}</p>`;
-          row += `<div class="li"><img class="delete" src="img/x.png" alt="x"></div>`;
+          row += `<div class="movies list">`;
+          row += `<div class="li1 list"><img class='li-img' src=${movie.poster} alt='poster'></div>`;
+          row += `<p class="li list">${movie.title}</p>`;
+          row += `<p class="lirating list">${movie.rating}</p>`;
+          row += `<div class="li2 list"><img class="delete" src="img/x.png" alt="x"></div>`;
           row += `</div>`;
           list.html(row);
         }
