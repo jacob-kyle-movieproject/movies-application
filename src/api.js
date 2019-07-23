@@ -21,11 +21,7 @@ let buildHtml= function(){
                 row += `</div>`;
                 list.html(row);
             }
-            $(".delete").on("click",function(){
-                let deleted = $(this).parent().parent().children().first().next().html();
-                deleteMovie(data,deleted)
 
-            });
         });
 };
 module.exports = {

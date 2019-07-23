@@ -60,7 +60,6 @@ $("#search").on("click",function(){
         $("#get-rate").val(movie.rating);
         $(".picture").html(`<img id="poster-img" src=${movie.poster} alt="poster">`);
           count = data.indexOf(movie);
-          console.log(count);
         }
       });
   });
