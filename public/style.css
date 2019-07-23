@@ -5,6 +5,8 @@ body{
     margin: 10px;
     height: 100%;
     /*background: black;*/
+    background-image: url("img/reel.jpeg");
+    background-color: #000;
 }
 
 .container {
@@ -43,6 +45,7 @@ body{
     width: 55%;
     padding: 25px;
     border-radius: 15px;
+    background-color: grey;
 }
 #all-movie{
     display: flex;
@@ -58,7 +61,7 @@ body{
     width: 15%;
 }
 .li{
-    width: 28%;
+    width: 35%;
 }
 .li2 {
     width: 50px;
@@ -68,6 +71,7 @@ body{
 }
 .list {
     align-content: right;
+    color: white;
 }
 .delete {
     max-height: 25px;
@@ -80,4 +84,7 @@ body{
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+}
+.forms {
+    color: white;
 }
